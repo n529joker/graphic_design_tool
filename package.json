@@ -5,33 +5,34 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "compile": "tailwindcss -i ./src/css/input.css -o ./dist/css/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/ace": "0.0.42",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.6.0",
-    "file-loader": "^4.1.0",
-    "html-loader": "^0.5.5",
-    "mini-css-extract-plugin": "^0.8.0",
-    "raw-loader": "^3.1.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "raw-loader": "^4.0.2",
     "style-loader": "^0.23.1",
-    "svg-url-loader": "^3.0.0",
+    "svg-url-loader": "^8.0.0",
     "to-string-loader": "^1.1.5",
-    "url-loader": "^2.1.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "url-loader": "^4.1.1",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "ace-builds": "^1.4.12",
-    "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
     "js-beautify": "^1.13.0",
     "popper.js": "^1.16.1",
     "sass": "^1.32.12",
-    "sass-loader": "^10"
+    "sass-loader": "^10",
+    "tailwindcss": "^3.4.4"
   }
 }

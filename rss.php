@@ -124,69 +124,69 @@ function parseRss($config)
     // return view('helpers.rss.template', [
     //     'rss' => $rss,
     //     'templates' => $config['templates'],
-    // ]);?>
-        <div>
-            <div class="">
-                <div class="text-center pt-4">
-                    <?php if ($templates['FeedTitle']['show'] == 'true') { ?>
-                        <h1 rss-item="FeedTitle" class="fw-normal fs-4 mt-2"><?php echo $rss['FeedTitle']; ?></h1>
-                    <?php } ?>
-                    <?php if ($templates['FeedSubtitle']['show'] == 'true') { ?>
-                        <p  rss-item="FeedSubtitle">
-                            <?php echo $rss['FeedSubtitle']; ?>
-                        </p>
-                    <?php } ?>
-                </div>
+    // ]); ?>
+    <div>
+        <div class="">
+            <div class="text-center pt-4">
+                <?php if ($templates['FeedTitle']['show'] == 'true') { ?>
+                    <h1 rss-item="FeedTitle" class="fw-normal fs-4 mt-2"><?php echo $rss['FeedTitle']; ?></h1>
+                <?php } ?>
+                <?php if ($templates['FeedSubtitle']['show'] == 'true') { ?>
+                    <p rss-item="FeedSubtitle">
+                        <?php echo $rss['FeedSubtitle']; ?>
+                    </p>
+                <?php } ?>
             </div>
         </div>
+    </div>
 
-        <?php if ($templates['FeedTagdLine']['show'] == 'true') { ?>
-            <div>
-                <div rss-item="FeedTagdLine" class="py-3">
-                    <div class="border-bottom text-muted small"><span><?php echo $rss['FeedTagdLine']; ?></span></div>
-                </div>
+    <?php if ($templates['FeedTagdLine']['show'] == 'true') { ?>
+        <div>
+            <div rss-item="FeedTagdLine" class="py-3">
+                <div class="border-b text-gray-700 text-xs"><span><?php echo $rss['FeedTagdLine']; ?></span></div>
             </div>
-        <?php } ?>
+        </div>
+    <?php } ?>
 
-        <?php foreach ($rss['items'] as $item) { ?>
-            <div>
-                <div class="py-3 mb-3">
-                    <?php if ($templates['ItemTitle']['show'] == 'true') { ?>
-                        <h5 rss-item="ItemTitle" class="mb-2" style="font-size: 19px;font-weight: bold;">
-                            <?php echo $item['ItemTitle']; ?>
-                        </h5>
-                    <?php } ?>
-                    <?php if ($templates['ItemMeta']['show'] == 'true') { ?>
-                        <div rss-item="ItemMeta" class="d-flex align-items-center my-2">
-                            <?php echo $item['ItemMeta']; ?>
-                        </div>
-                    <?php } ?>
-                    <div class="d-flex">
-                        <div>
-                            <?php if ($templates['ItemDescription']['show'] == 'true') { ?>
-                                <p rss-item="ItemDescription" class="">
-                                    <?php echo $item['ItemDescription']; ?>
-                                </p>
-                            <?php } ?>
-                            <?php if ($templates['ItemStats']['show'] == 'true') { ?>
-                                <div rss-item="ItemStats">
-                                    <div class="d-flex align-items-center small">
-                                        <?php echo $item['ItemStats']; ?>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <?php if ($templates['ItemEnclosure']['show'] == 'true') { ?>
-                            <div rss-item="ItemEnclosure" class="ml-auto ms-auto pl-4 ps-4">
-                                <?php echo $item['ItemEnclosure']; ?>
-                            </div>
-                        <?php } ?>             
+    <?php foreach ($rss['items'] as $item) { ?>
+        <div>
+            <div class="py-3 mb-3">
+                <?php if ($templates['ItemTitle']['show'] == 'true') { ?>
+                    <h5 rss-item="ItemTitle" class="mb-2" style="font-size: 19px;font-weight: bold;">
+                        <?php echo $item['ItemTitle']; ?>
+                    </h5>
+                <?php } ?>
+                <?php if ($templates['ItemMeta']['show'] == 'true') { ?>
+                    <div rss-item="ItemMeta" class="flex items-center my-2">
+                        <?php echo $item['ItemMeta']; ?>
                     </div>
-                    
+                <?php } ?>
+                <div class="flex">
+                    <div>
+                        <?php if ($templates['ItemDescription']['show'] == 'true') { ?>
+                            <p rss-item="ItemDescription" class="">
+                                <?php echo $item['ItemDescription']; ?>
+                            </p>
+                        <?php } ?>
+                        <?php if ($templates['ItemStats']['show'] == 'true') { ?>
+                            <div rss-item="ItemStats">
+                                <div class="flex items-center text-xs">
+                                    <?php echo $item['ItemStats']; ?>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <?php if ($templates['ItemEnclosure']['show'] == 'true') { ?>
+                        <div rss-item="ItemEnclosure" class="ml-auto ms-auto pl-4 ps-4">
+                            <?php echo $item['ItemEnclosure']; ?>
+                        </div>
+                    <?php } ?>
                 </div>
+
             </div>
-        <?php } ?>
-    <?php
+        </div>
+    <?php } ?>
+<?php
 }
 
 echo parseRss($_GET['config']);

@@ -57,7 +57,7 @@ require 'vendor/autoload.php';
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 $styles = [
-    $dir.'/css/bootstrap.min.css'
+    $dir.'/../../css/tailwind.css'
 ];
 
 $cssToInlineStyles = new CssToInlineStyles();
